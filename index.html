@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>AJAX Dynamic Content</title>
+<title>AJAX Search Suggestion</title>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style>
+#suggestions{
+    border:1px solid #ccc;
+    width:200px;
+    display:none;
+    background:white;
+}
+
+.suggestion-item{
+    padding:5px;
+    cursor:pointer;
+}
+
+.suggestion-item:hover{
+    background:#f0f0f0;
+}
+</style>
+
 </head>
+
 <body>
 
-<h2>AJAX Example</h2>
+<h2>Search Suggestion Example</h2>
 
-<button onclick="loadData()">Load Content</button>
+<input type="text" id="search" placeholder="Type to search">
 
-<div id="content">
-    <p>Click the button to load new content.</p>
-</div>
+<div id="suggestions"></div>
 
 <script src="script.js"></script>
 
