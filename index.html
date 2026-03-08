@@ -1,54 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dynamic Web Page using AJAX</title>
-    <style>
-        body{
-            font-family: Arial;
-            text-align:center;
-            margin-top:50px;
-        }
-
-        #result{
-            margin-top:20px;
-            font-size:20px;
-            color:green;
-        }
-
-        button{
-            padding:10px 20px;
-            font-size:16px;
-            cursor:pointer;
-        }
-    </style>
+    <title>AJAX Dynamic Content</title>
 </head>
-
 <body>
 
-<h2>AJAX Dynamic Content Example</h2>
+<h2>AJAX Example</h2>
 
 <button onclick="loadData()">Load Content</button>
 
-<div id="result">Click the button to load content.</div>
+<div id="content">
+    <p>Click the button to load new content.</p>
+</div>
 
-<script>
-
-function loadData() {
-
-    var xhr = new XMLHttpRequest();
-
-    xhr.open("GET", "data.txt", true);
-
-    xhr.onreadystatechange = function() {
-        if(xhr.readyState == 4 && xhr.status == 200){
-            document.getElementById("result").innerHTML = xhr.responseText;
-        }
-    };
-
-    xhr.send();
-}
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
