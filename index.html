@@ -1,39 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>AJAX Search Suggestion</title>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<style>
-#suggestions{
-    border:1px solid #ccc;
-    width:200px;
-    display:none;
-    background:white;
-}
-
-.suggestion-item{
-    padding:5px;
-    cursor:pointer;
-}
-
-.suggestion-item:hover{
-    background:#f0f0f0;
-}
-</style>
-
+<title>Login Form Validation</title>
+<script src="script.js"></script>
 </head>
 
 <body>
 
-<h2>Search Suggestion Example</h2>
+<h2>Login Form</h2>
 
-<input type="text" id="search" placeholder="Type to search">
+<form name="loginForm" onsubmit="return validateForm()">
 
-<div id="suggestions"></div>
+Username: <input type="text" name="username"><br><br>
 
-<script src="script.js"></script>
+Password: <input type="password" name="password"><br><br>
+
+<input type="submit" value="Login">
+
+</form>
 
 </body>
 </html>
