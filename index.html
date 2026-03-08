@@ -1,44 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dynamic Web Page Example</title>
+    <title>Dynamic Web Page using AJAX</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
+        body{
+            font-family: Arial;
+            text-align:center;
+            margin-top:50px;
         }
 
-        #content {
-            font-size: 22px;
-            margin: 20px;
-            color: blue;
+        #result{
+            margin-top:20px;
+            font-size:20px;
+            color:green;
         }
 
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
+        button{
+            padding:10px 20px;
+            font-size:16px;
+            cursor:pointer;
         }
     </style>
 </head>
 
 <body>
 
-    <h1>Dynamic Web Page</h1>
+<h2>AJAX Dynamic Content Example</h2>
 
-    <div id="content">
-        Click the button to change this text.
-    </div>
+<button onclick="loadData()">Load Content</button>
 
-    <button onclick="changeContent()">Click Me</button>
+<div id="result">Click the button to load content.</div>
 
-    <script>
-        function changeContent() {
-            document.getElementById("content").innerHTML =
-                "🎉 The content has been updated using JavaScript and DOM!";
+<script>
+
+function loadData() {
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "data.txt", true);
+
+    xhr.onreadystatechange = function() {
+        if(xhr.readyState == 4 && xhr.status == 200){
+            document.getElementById("result").innerHTML = xhr.responseText;
         }
-    </script>
+    };
+
+    xhr.send();
+}
+
+</script>
 
 </body>
 </html>
