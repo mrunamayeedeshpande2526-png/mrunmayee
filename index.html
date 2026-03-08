@@ -1,28 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Welcome Page</title>
+    <title>Dynamic Web Page Example</title>
     <style>
         body {
-            background-color: #f0f8ff;
-            text-align: center;
             font-family: Arial, sans-serif;
-            margin-top: 100px;
+            text-align: center;
+            margin-top: 50px;
         }
-        h1 {
-            color: #2c3e50;
-            font-size: 50px;
+
+        #content {
+            font-size: 22px;
+            margin: 20px;
+            color: blue;
         }
-        p {
-            font-size: 20px;
-            color: #555;
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
         }
     </style>
 </head>
+
 <body>
 
-    <h1>Hello, Welcome!</h1>
-    <p>This is my first HTML page 😊</p>
+    <h1>Dynamic Web Page</h1>
+
+    <div id="content">
+        Click the button to change this text.
+    </div>
+
+    <button onclick="changeContent()">Click Me</button>
+
+    <script>
+        function changeContent() {
+            document.getElementById("content").innerHTML =
+                "🎉 The content has been updated using JavaScript and DOM!";
+        }
+    </script>
 
 </body>
 </html>
